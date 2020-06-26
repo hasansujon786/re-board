@@ -18,12 +18,11 @@ const ListItem = ({card, cardId, listId, deleteACard}) => {
 }
 
 function List({list, listId, deleteAList, createNewCard, deleteACard}) {
-
   return (
-    <div className='bg-gray-300 mx-2 pb-2 rounded-md shadow-md border border-gray-400 flex flex-col max-h-full self-start'
+    <div className='bg-gray-300 mx-2 pb-2 rounded-md shadow-lg border border-gray-400 flex flex-col max-h-full self-start'
       style={{minWidth: '300px'}}
     >
-      <div className='icon-btn-container h-10 px-3 flex items-center justify-between bg-gray-400 border-b border-gray-500 rounded-t-md text-xl font-bold text-gray-700'>
+      <div style={{minHeight: '40px'}} className='icon-btn-container h-10 px-3 flex items-center justify-between bg-gray-400 border-b border-gray-500 rounded-t-md text-xl font-bold text-gray-700'>
         <span className=''>
           {list.name}
         </span>
@@ -33,7 +32,7 @@ function List({list, listId, deleteAList, createNewCard, deleteACard}) {
           </svg>
         </button>
       </div>
-      <ul className='px-1 overflow-y-auto' >
+      <ul className='px-1 overflow-y-auto fancy-scrollbar' >
         {Object.keys(list.cards).map(key =>
           <ListItem card={list.cards[key]} cardId={key} listId={listId} deleteACard={deleteACard} key={key} />)}
       </ul>

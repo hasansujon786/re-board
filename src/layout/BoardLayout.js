@@ -2,15 +2,19 @@ import React from 'react'
 import Navbar from '../components/Navbar'
 // import {Link} from '@reach/router'
 import NavButton from '../components/NavButton'
+import {useMatch} from '@reach/router'
 
 
 const BoardLayout = ({children}) => {
+  const match = useMatch("b/:boardId/:boardName")
+  const boardName = match && match.boardName ? match.boardName : ''
+
   return (
     <main
-      className='h-screen bg-green-300 flex flex-col'
+      className='min-h-screen bg-green-300 flex flex-col'
     >
       <Navbar >
-        <NavButton></NavButton>
+        <NavButton>{boardName}</NavButton>
       </Navbar>
       {children}
     </main>
