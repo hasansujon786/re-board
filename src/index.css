@@ -1,6 +1,20 @@
-@tailwind base;
+.icon-btn  {
+  color:#718096;
+  cursor: pointer;
+  transition: opacity 180ms ease-in;
+  padding: 4px;
+  border-radius: 3px;
+}
+.icon-btn:hover, .icon-btn:focus  {
+  color:#1a202c;
+  opacity: 1 !important;
+  outline: none;
+  background: rgba(0,0,0,.1);
+}
 
-@tailwind components;
-
-@tailwind utilities;
-
+.hide-icons .icon-btn {
+  opacity: 0;
+}
+.hide-icons:hover .icon-btn {
+  opacity: 1;
+}
