@@ -70,7 +70,11 @@ export const BoardContext = React.createContext({});
 const create_new_board = (state, name) => {
   const boardId = guidGenerator()
   let boards = {...state.boards}
-  boards[boardId] = {name, lists: {}}
+  boards[boardId] = {
+    name,
+    started: false,
+    lists: {}
+  }
   return {...state, boards}
 }
 
